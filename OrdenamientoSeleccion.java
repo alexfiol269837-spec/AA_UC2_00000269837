@@ -1,44 +1,49 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
 package com.mycompany.ordenamientoseleccion;
 
 /**
- *
- * @author fiolr
+ * 
  */
 public class OrdenamientoSeleccion {
 
-
     public static void main(String[] args) {
 
-        String[] palabras = {"uno", "union", "ulala", "u", "ucraniano", "umamusume"};
+        String[] palabras = {"uno", "union", "ulala", "u", "ucraniano", "umamusume"}; 
+        // 1 asignación
 
-        System.out.println("Antes de ordenarlo estaba asi:");
-        for (String palabra : palabras) {
-            System.out.print(palabra + " ");
+        System.out.println("Antes de ordenarlo estaba asi:"); // 1 operación
+
+        for (String palabra : palabras) { // n operaciones
+            System.out.print(palabra + " "); // n operaciones
         }
 
-        // Algoritmo de ordenamiento por selección
-        for (int i = 0; i < palabras.length - 1; i++) {
+        // ALGORITMO DE ORDENAMIENTO POR SELECCIÓN
 
-            int indiceMinimo = i;
+        for (int i = 0; i < palabras.length - 1; i++) {
+            // inicialización = 1
+            // comparación = n
+            // incremento = n
+
+            int indiceMinimo = i; // 1 asignación
 
             for (int j = i + 1; j < palabras.length; j++) {
+                // inicialización = 1
+                // comparación = n
+                // incremento = n
 
                 if (palabras[j].length() < palabras[indiceMinimo].length()) {
-                    indiceMinimo = j;
+                    // comparación de longitudes
+                    indiceMinimo = j; // 1 asignación
                 }
-
             }
 
-            String temp = palabras[indiceMinimo];
-            palabras[indiceMinimo] = palabras[i];
-            palabras[i] = temp;
+            // intercambio de valores
+            String temp = palabras[indiceMinimo]; // 1 asignación
+            palabras[indiceMinimo] = palabras[i]; // 1 asignación
+            palabras[i] = temp; // 1 asignación
         }
 
         System.out.println("\nDespués de ordenarlo quedo asi:");
+
         for (String palabra : palabras) {
             System.out.print(palabra + " ");
         }
