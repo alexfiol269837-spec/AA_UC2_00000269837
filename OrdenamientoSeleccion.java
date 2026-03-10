@@ -49,3 +49,23 @@ public class OrdenamientoSeleccion {
         }
     }
 }
+
+/*
+ANÁLISIS DE COMPLEJIDAD
+
+El algoritmo de selección utiliza dos ciclos anidados.
+
+El ciclo externo recorre el arreglo n veces.
+El ciclo interno busca el elemento mínimo en cada iteración.
+
+Número aproximado de comparaciones:
+
+T(n) = n(n - 1) / 2
+
+Notación asintótica:
+
+O(n²)
+
+Esto significa que el tiempo de ejecución crece de forma cuadrática
+con respecto al tamaño del arreglo.
+*/
