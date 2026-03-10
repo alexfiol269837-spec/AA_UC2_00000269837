@@ -54,3 +54,23 @@ public class OrdenamientoBurbuja {
     }
 }
 
+/*
+ANÁLISIS DE COMPLEJIDAD
+
+El algoritmo de ordenamiento burbuja utiliza dos ciclos anidados para recorrer el arreglo.
+
+El ciclo externo se ejecuta aproximadamente n veces.
+El ciclo interno también depende de n.
+
+Conteo aproximado de operaciones:
+
+T(n) = n(n - 1)
+
+T(n) = n² - n
+
+Notación asintótica:
+
+O(n²)
+
+Esto significa que el tiempo de ejecución del algoritmo crece proporcionalmente al cuadrado del tamaño del arreglo.
+*/ 
