@@ -13,71 +13,71 @@ public class MergeSort {
     private static int[] aux;
 
     public static void mergeSort(int[] arreglo) {
-        aux = new int[arreglo.length];
-        dividir(arreglo, 0, arreglo.length - 1);
+        aux = new int[arreglo.length];               // 1 
+        dividir(arreglo, 0, arreglo.length - 1);     // 1
     }
 
     private static void dividir(int[] arreglo, int inicio, int fin) {
-        if (inicio >= fin) {
-            return;
+        if (inicio >= fin) {                         // 1
+            return;                                  // 1 
         }
 
-        int medio = (inicio + fin) / 2;
+        int medio = (inicio + fin) / 2;              // 3
 
-        dividir(arreglo, inicio, medio);
-        dividir(arreglo, medio + 1, fin);
+        dividir(arreglo, inicio, medio);             // T(n/2)
+        dividir(arreglo, medio + 1, fin);            // T(n/2)
 
-        combinar(arreglo, inicio, medio, fin);
+        combinar(arreglo, inicio, medio, fin);       // O(n)
     }
 
     private static void combinar(int[] arreglo, int inicio, int medio, int fin) {
-
         
-        for (int i = inicio; i <= fin; i++) {
-            aux[i] = arreglo[i];
+
+        for (int i = inicio; i <= fin; i++) {        // 1, n+1 , n 
+            aux[i] = arreglo[i];                     // 2n 
         }
 
-        int i = inicio;
-        int j = medio + 1;
-        int k = inicio;
+        int i = inicio;                              // 1 
+        int j = medio + 1;                           // 2 
+        int k = inicio;                              // 1 
 
-        while (i <= medio && j <= fin) {
-            if (aux[i] <= aux[j]) {
-                arreglo[k] = aux[i];
-                i++;
+    
+        while (i <= medio && j <= fin) {             // n + 1 
+            if (aux[i] <= aux[j]) {                  // 2n 
+                arreglo[k] = aux[i];                 // 2n 
+                i++;                                 // n
             } else {
-                arreglo[k] = aux[j];
-                j++;
+                arreglo[k] = aux[j];                 // 2n 
+                j++;                                 // n 
             }
-            k++;
+            k++;                                     // n 
         }
 
-        
-        while (i <= medio) {
-            arreglo[k] = aux[i];
-            i++;
-            k++;
+    
+        while (i <= medio) {                         // k + 1 
+            arreglo[k] = aux[i];                     // 2k 
+            i++;                                     // k
+            k++;                                     // k
         }
-
-        
     }
 
     public static void imprimir(int[] arreglo) {
-        for (int num : arreglo) {
-            System.out.print(num + " ");
+        for (int num : arreglo) {                    // n + 1 
+            System.out.print(num + " ");             // n 
         }
-        System.out.println();
+        System.out.println();                        // 1 
     }
 
     public static void main(String[] args) {
-        int[] datos = {10, 4, 7, 2, 8, 1, 3};
+        int[] datos = {10, 4, 7, 2, 8, 1, 3};        // 1
 
-        System.out.println("Antes de ordenar:");
-        imprimir(datos);
+        System.out.println("Antes de ordenar:");    // 1 
+        imprimir(datos);                             // 1 
 
-        mergeSort(datos);
+        mergeSort(datos);                            // 1 
 
-        System.out.println("Después de ordenar:");
-        imprimir(datos);
+        System.out.println("Después de ordenar:");   // 1
+        imprimir(datos);                             // 1
     }
+}
 }
