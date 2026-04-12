@@ -81,3 +81,25 @@ public class MergeSort {
     }
 }
 }
+/*
+ANÁLISIS DE COMPLEJIDAD: MERGESORT
+El algoritmo utiliza un enfoque recursivo de "divide y vencerás".
+Fase de División: El arreglo se divide a la mitad de forma sucesiva
+hasta llegar a sub-arreglos de un solo elemento. Esto genera una
+estructura de árbol con una profundidad de log₂(n) niveles.
+Fase de Combinación (Mezcla): En cada nivel del árbol, el algoritmo
+recorre y compara todos los elementos para fusionarlos en orden.
+Esta operación tiene un costo lineal de n en cada nivel.
+Número total de operaciones:
+El trabajo total es el producto de los niveles de división por el trabajo
+de mezcla en cada nivel:
+$T(n) = n \cdot \log_2(n)$
+Notación asintótica:
+$O(n \log n)$
+Conclusión:
+A diferencia del método de selección ($O(n^2)$), el tiempo de ejecución de
+MergeSort crece de forma log-lineal. Esto lo hace mucho más eficiente
+para manejar grandes volúmenes de datos, ya que no se vuelve
+excesivamente lento a medida que el arreglo aumenta de tamaño.
+*/
+
